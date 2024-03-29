@@ -1,0 +1,23 @@
+meta {
+  name: update user
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:3333/users/5
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: oat_MTg.VUdhaXNOMndGNlBtRS1RYUxzS1JHREpCSVdhU2lnZHgxZHFlNDJuMjM2OTY0NDk1NTE
+}
+
+body:json {
+  {
+    "fullName": "Jane Doe5",
+    "email": "user5@gmail.com",
+    "password": "password123!"
+  }
+}

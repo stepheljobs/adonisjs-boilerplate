@@ -1,0 +1,23 @@
+meta {
+  name: create user
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3333/users
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: oat_MTg.VUdhaXNOMndGNlBtRS1RYUxzS1JHREpCSVdhU2lnZHgxZHFlNDJuMjM2OTY0NDk1NTE
+}
+
+body:json {
+  {
+    "email": "user4@gmail.com",
+    "password": "password123!",
+    "fullName": "Jhon Doe"
+  }
+}
