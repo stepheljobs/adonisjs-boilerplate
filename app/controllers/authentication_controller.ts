@@ -8,6 +8,7 @@ export default class AuthenticationController {
     try {
       const user = await User.verifyCredentials(email, password)
       const token = await User.accessTokens.create(user)
+      // const token = await User.accessTokens.create(user, ['',''])
       const userJSON = user.serialize()
       return response.status(200).json({ userJSON, token })
     } catch (error) {

@@ -1,0 +1,23 @@
+meta {
+  name: create permission
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3333/permissions
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: oat_MTg.VUdhaXNOMndGNlBtRS1RYUxzS1JHREpCSVdhU2lnZHgxZHFlNDJuMjM2OTY0NDk1NTE
+}
+
+body:json {
+  {
+    "ability": {
+      "resource": ["create", "view", "delete"]
+    }
+  }
+}

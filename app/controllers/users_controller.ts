@@ -3,7 +3,7 @@ import User from '#models/user'
 
 export default class UsersController {
 
-  public async listUsers({ response }: HttpContext) {
+  public async list({ response }: HttpContext) {
     try {
       const users = await User.all()
       return response.status(200).json({ users })
@@ -12,7 +12,7 @@ export default class UsersController {
     }
   }
 
-  public async updateUser({ params, request, response }: HttpContext) {
+  public async update({ params, request, response }: HttpContext) {
     const { id } = params
     const { email, fullName, password } = request.only(['email', 'fullName', 'password'])
 
@@ -43,7 +43,7 @@ export default class UsersController {
   }
 
   
-  public async deleteUser({ params, response }: HttpContext) {
+  public async delete({ params, response }: HttpContext) {
     const { id } = params
     try {
       const user = await User.find(id)
@@ -57,7 +57,7 @@ export default class UsersController {
     }
   }
 
-  public async createUser({ request, response }: HttpContext) {
+  public async create({ request, response }: HttpContext) {
     const { fullName, email, password } = request.only(['fullName', 'email', 'password'])
 
     try {
